@@ -1,0 +1,6 @@
+@Recipix.Server_HostAddress = http://localhost:5094
+
+GET {{Recipix.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

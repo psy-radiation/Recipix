@@ -1,0 +1,9 @@
+
+<form (ngSubmit)="register()">
+  <h2>Реєстрація</h2>
+  <input [(ngModel)]="username" name="username" placeholder="Username" required>
+  <input [(ngModel)]="email" name="email" placeholder="Email" required>
+  <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required>
+  <button type="submit">Зареєструватися</button>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</form>

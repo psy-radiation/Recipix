@@ -1,0 +1,34 @@
+<mat-card class="recipe-detail" *ngIf="recipe">
+  <div class="recipe-header">
+    <img mat-card-image class="recipe-image" [src]="recipe.imageUrl" alt="Фото рецепта" />
+
+    <div class="recipe-info">
+      <mat-card-title>{{ recipe.title }}</mat-card-title>
+      <div class="recipe-meta">Складність: {{ recipe.difficulty }}</div>
+      <div class="recipe-meta">Час приготування: {{ recipe.timeMinutes }} хв</div>
+      <div class="recipe-meta">Автор: {{ recipe.author }}</div>
+      <div class="recipe-meta">Дата: {{ recipe.created | date:'mediumDate' }}</div>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="recipe-section">
+    <h3>Опис</h3>
+    <p>{{ recipe.description }}</p>
+  </div>
+
+  <div class="recipe-section">
+    <h3>Рецепт</h3>
+    <p>{{ recipe.instruction }}</p>
+  </div>
+
+  <mat-card-actions class="likes">
+    <button mat-icon-button color="warn" (click)="toggleLike(recipe)">
+      <mat-icon>{{ recipe.isLikedByMe ? 'favorite' : 'favorite_border' }}</mat-icon>
+    </button>
+    <span>{{ recipe.likeCount || 0 }}</span>
+  </mat-card-actions>
+
+  <app-comments [recipeId]="recipe.id"></app-comments>
+</mat-card>

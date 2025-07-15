@@ -1,0 +1,15 @@
+wwwroot\images\borsch.jpg
+wwwroot\images\omlet.jpeg
+wwwroot\images\pasta.jpeg
+wwwroot\avatars\defaultpfp.png
+wwwroot\avatars\avatar_3.png
+wwwroot\recipe-images\a656b481-f601-4882-afae-a6ff1d9325d6.png
+wwwroot\recipe-images\4ae13fb8-6223-4d6f-80d1-5a25373a926d.png
+wwwroot\recipe-images\8960fca4-190e-4e97-ae9f-ed49259569dd.png
+wwwroot\recipe-images\487f504f-72c2-430f-aa9e-1332268f2579.png
+wwwroot\recipe-images\a4e25189-11d2-4717-a209-fc8794d9465a.png
+wwwroot\recipe-images\01137544-4918-4ce0-8f4c-d307f1673e33.png
+wwwroot\recipe-images\d9a29be1-bf5b-4d8b-beee-dcab299f1671.png
+wwwroot\recipe-images\70bc57e8-e5fb-46b7-aa33-fd2e9fadf751.png
+wwwroot\avatars\avatar_4.png
+wwwroot\recipe-images\8de6978f-76ac-443b-9e74-722d1424c2f5.png

@@ -1,0 +1,6 @@
+services:
+  recipix.server:
+    image: ${DOCKER_REGISTRY-}recipixserver
+    build:
+      context: .
+      dockerfile: Recipix.Server/Dockerfile

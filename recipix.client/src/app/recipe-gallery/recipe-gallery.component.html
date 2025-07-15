@@ -1,0 +1,8 @@
+<div class="grid">
+  <div class="card" *ngFor="let recipe of recipes" (click)="goToRecipe(recipe.id)">
+    <img [src]="'https://localhost:7001' + recipe.imageUrl" alt="{{ recipe.title }}" />
+    <h3>{{ recipe.title }}</h3>
+    <p>⏱️ ~{{ recipe.timeMinutes }} хв</p>
+    <p>⭐ Складність: {{ recipe.difficulty }}</p>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="profile">
+  <h2>Ласкаво просимо!</h2>
+
+  <div *ngIf="profile" class="profile-card">
+    <div class="avatar-wrapper">
+      <img [src]="'https://localhost:7001' + profile.avatarUrl" alt="Аватар" class="avatar" />
+    </div>
+
+    <h3>{{ profile.username }}</h3>
+
+    <p>{{ profile.email }}</p>
+    <button class="change-avatar-btn" (click)="navigateToChangeAvatar()">Змінити аватар</button>
+  </div>
+
+  <button class="logout-btn" (click)="logout()">Вийти</button>
+</div>
+<app-recipe-gallery mode="mine"></app-recipe-gallery>

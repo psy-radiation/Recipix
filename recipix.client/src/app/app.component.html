@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #sidenav [mode]="isSmallScreen ? 'over' : 'side'" [opened]="!isSmallScreen" class="sidenav">
+    <mat-toolbar>Recipix</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active">Головна</a>
+      <a mat-list-item routerLink="/liked" routerLinkActive="active">Вподобане</a>
+
+      <a mat-list-item routerLink="/add" routerLinkActive="active">Додати блюдо</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button *ngIf="isSmallScreen" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+
+      <span class="spacer"></span>
+
+      <nav class="nav-bar">
+        <a *ngIf="!auth.isAuthenticated()" mat-button routerLink="/login" routerLinkActive="active">Вхід</a>
+        <a *ngIf="!auth.isAuthenticated()" mat-button routerLink="/register" routerLinkActive="active">Реєстрація</a>
+        <a *ngIf="auth.isAuthenticated()" mat-button routerLink="/profile" routerLinkActive="active">Профіль</a>
+      </nav>
+    </mat-toolbar>
+
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

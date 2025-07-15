@@ -1,0 +1,17 @@
+<h2>Сменить аватар</h2>
+
+<input type="file" accept="image/*" (change)="fileChangeEvent($event)" />
+
+<image-cropper [imageChangedEvent]="imageChangedEvent"
+               [maintainAspectRatio]="true"
+               [aspectRatio]="1"
+               [resizeToWidth]="256"
+               format="png"
+               (imageCropped)="imageCropped($event)"></image-cropper>
+
+<div *ngIf="croppedImage">
+  <h3>Превью:</h3>
+  <img [src]="croppedImage" style="border-radius: 50%; width: 128px; height: 128px;" />
+</div>
+
+<button (click)="upload()">Сохранить</button>

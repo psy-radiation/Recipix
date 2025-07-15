@@ -1,0 +1,58 @@
+<mat-card class="add-recipe-card">
+  <div class="card-header">
+    <h2>Додати рецепт</h2>
+  </div>
+
+  <form (ngSubmit)="submitRecipe()" #recipeForm="ngForm" enctype="multipart/form-data" class="recipe-form">
+    <div class="form-left">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Назва</mat-label>
+        <input matInput [(ngModel)]="recipe.title" name="title" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Час приготування (хв)</mat-label>
+        <input matInput type="number" [(ngModel)]="recipe.cookingTimeMinutes" name="cookingTime" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Складність</mat-label>
+        <mat-select [(ngModel)]="recipe.difficulty" name="difficulty" required>
+          <mat-option value="Легко">Легко</mat-option>
+          <mat-option value="Середньо">Середньо</mat-option>
+          <mat-option value="Складно">Складно</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Короткий опис</mat-label>
+        <textarea matInput [(ngModel)]="recipe.description" name="description" required></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Рецепт</mat-label>
+        <textarea matInput [(ngModel)]="recipe.instructions" name="instructions" rows="5"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="form-right">
+      <input type="file" (change)="fileChangeEvent($event)" accept="image/*" />
+
+      <image-cropper [imageChangedEvent]="imageChangedEvent"
+                     [maintainAspectRatio]="true"
+                     [aspectRatio]="1"
+                     format="png"
+                     (imageCropped)="imageCropped($event)">
+      </image-cropper>
+
+      <div *ngIf="croppedImage" class="preview-container">
+        <img [src]="croppedImage" alt="Preview" class="preview-image" />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Додати</button>
+      <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" diameter="30"></mat-progress-spinner>
+    </div>
+  </form>
+</mat-card>

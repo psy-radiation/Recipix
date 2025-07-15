@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:7163",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "D:\\VSporjects\\Recipix\\Recipix.Server\\..\\recipix.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
